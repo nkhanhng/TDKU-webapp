@@ -3,21 +3,24 @@ import SearchField from "./SearchField";
 
 import ProfilePanel from "./ProfilePanel";
 import "../App.css"
-import Test from './Test';
+
 // import LogoTeam from './LogoTeam';
 class NavBar extends Component {
   render() {
 
     return (
         <div className="navbar navbar-expand">
-        <div className="container">
-          {/* <SearchField onSearchChanged={this.props.onSearchChanged} /> */}
-          <SearchField/>
+         
+            {/* <SearchField onSearchChanged={this.props.onSearchChanged} /> */}
+            <div className='navbar-content row d-flex justify-content-between'>
+              <SearchField/>
+              <ProfilePanel/>  
+            </div>
           
-          <ProfilePanel />
-          <Test/>
+          
+            
+       
         </div>
-      </div>
     );
   }
 }
