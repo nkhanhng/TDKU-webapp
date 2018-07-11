@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
-import NavBar from './components/NavBar';
-  
+import React, { Component } from "react";
+import {Switch, Route,BrowserRouter, withRouter} from 'react-router-dom';
 
-import MainContent from './components/MainContent';
-import DescriptionWeb from "./components/DescriptionWeb";
-import Footer from "./components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import ItemList from "./components/ItemList";
+import ItemDetail from "./components/ItemDetail";
+
+
 class App extends Component {
-  render() {
+  render(){
     return (
       <div className="App " >      
-      <div>
-        
-        <NavBar/>
-        <DescriptionWeb/>
-          
-        <MainContent/>
-        <Footer/>
+      <BrowserRouter>
+        <div>
+          <Route exact path="/"component={ItemList}  />
+          <Route path="/post/:id" component={ItemDetail} />    
+        </div>
+         
+      </BrowserRouter>
       </div>
-      
-      </div>
-    );
+    )
   }
 }
 

@@ -10,16 +10,12 @@ class NavBar extends Component {
 
     return (
         <div className="navbar navbar-expand">
-         
-            {/* <SearchField onSearchChanged={this.props.onSearchChanged} /> */}
+                 
             <div className='navbar-content row d-flex justify-content-between'>
-              <SearchField/>
-              <ProfilePanel/>  
+              <SearchField onSearchChanged={this.props.onSearchChanged}/>
+              <ProfilePanel/>   
             </div>
-          
-          
-            
-       
+
         </div>
     );
   }

@@ -1,22 +1,30 @@
-import React from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import React, { Component } from 'react';
+import config from '../config';
+import { Card, CardImg, CardBody,
+  CardTitle } from 'reactstrap';
+  import {Link} from 'react-router-dom';
+class Item1 extends Component {
+  render() {
+    return (
+      <div> 
+         <Link to={`/post/${this.props.img._id}`}>      
+        <div className="box">
+          
+          <Card >
+            <CardImg className="imageBox"
+              src={`http://localhost:6969${this.props.img.imageUrl}`}
+              alt="Card image cap" />
+            <CardBody className="textBox" >
+              <CardTitle>{this.props.img.title}</CardTitle>
+              
+            </CardBody>
+          </Card>
 
-const Example = (props) => {
- 
- 
-  return (
-    <div className="box">
-      <Card >
-        <CardImg  className="imageBox" src={require('../img/box.jpeg')} alt="Card image cap" />
-        <CardBody className="textBox" >
-          <CardTitle>Card title</CardTitle>
-         
-        </CardBody>
-      </Card>
-      
-    </div>
-  );
-};
+        </div>
+        </Link>
+      </div>
+    );
+  }
+}
 
-export default Example;
+export default Item1;

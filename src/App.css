@@ -30,7 +30,6 @@
   to { transform: rotate(360deg); }
 }
 .navbar{
-  
   top: 0;
   left: 0;
   width: 100%;
@@ -46,30 +45,23 @@
   position: absolute;
   top: 10px;
   width: 100%;
-  
 }
 
 h2{
   font-family: 'Markazi Text', serif;
 }
 
-
-
-
-
 .box{
-  width: 360px;
-
-  margin: auto;
-  transition: .3s ease;
-  box-shadow: 0 1px 1px rgba(0,0,0,.3);
+  width: 355px;
+  height: auto;
+   transition: .3s ease; 
+   box-shadow: 0 1px 1px rgba(0,0,0,.3); 
   margin-bottom: 40px;
-
+  
 } 
 .box:hover{
   box-shadow: 0 5px 20px rgba(0,0,0,.8);
-  transform: translateY(-10px) scale(1.02);
- 
+  transform: translateZ(5px) scale(1.02);
 }
 .imageBox{
   width: 100%;
@@ -80,8 +72,6 @@ h2{
   padding: 10px;
   background-color: #DDDDDD;
 }
-
-
 
 hr.styleHR { 
   width: 100%;
@@ -97,6 +87,28 @@ hr.styleHR {
  
 }
 .footer{
+  margin-top: 40px;
   background-color: #BBBBBB;
   color: #fff;
+}
+
+.detailImg{
+  display: inline-block;
+  max-width: 800px;
+  margin: 50px
+}
+.child{
+  display: block;
+  margin-left: 200px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top : 20px
+}
+.child img{
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.6);
+}
+.title{
+  margin-top: 20px;
+  font-size: 30px;
 }
