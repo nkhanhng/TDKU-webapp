@@ -15,7 +15,7 @@ class App extends Component {
         <div>
           <Route exact path="/"component={ItemList}  />
           <Route path="/post/:id" component={ItemDetail} />   
-           <Route exact path="/post"component={PostForm}  /> 
+           <Route  path="/postDetail"component={PostForm}  /> 
         </div>
          
       </BrowserRouter>
