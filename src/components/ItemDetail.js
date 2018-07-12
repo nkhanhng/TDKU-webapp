@@ -41,6 +41,10 @@ class ItemDetail extends Component {
                         <h5 className='title'>{this.state.item.title}</h5>
                         <hr className='styleHR'/>
                         <p className='description'>{this.state.item.description}</p>
+                        <hr className='styleHR'/>
+                        <h5 className='text-left'>Add a comment: </h5>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button className='btn btn-primary mt-3'>Send your comment</button>
                     </div>
                 </div>
             </div>
