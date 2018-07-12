@@ -11,7 +11,7 @@ class ItemList extends Component {
     
       componentDidMount() {
         axios
-          .get("http://localhost:6969/api/post")
+          .get("/api/post")
           .then(data => {
             console.log(data.data);
             this.setState({

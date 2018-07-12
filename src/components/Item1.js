@@ -12,7 +12,7 @@ class Item1 extends Component {
           
           <Card >
             <CardImg className="imageBox"
-              src={`http://localhost:6969${this.props.img.imageUrl}`}
+              src={config.rootPath+this.props.img.imageUrl }
               alt="Card image cap" />
             <CardBody className="textBox" >
               <CardTitle>{this.props.img.title}</CardTitle>

@@ -8,7 +8,7 @@ import NavBar from './NavBar';
 class ItemDetail extends Component {
     componentWillMount(){
         const itemId = this.props.match.params.id;
-        axios.get(`http://localhost:6969/api/post/${itemId}`)
+        axios.get(`/api/post/${itemId}`)
         .then(respone =>{
             console.log(respone)
             this.setState({

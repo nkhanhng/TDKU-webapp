@@ -19,7 +19,7 @@
     "three-js": "^79.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env REACT_APP_STATE=localhost react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
