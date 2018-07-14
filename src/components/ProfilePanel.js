@@ -12,20 +12,8 @@ class ProfilePanel extends Component {
     username : null
   }
 
-  login = (submittedUsername,submittedPassword) => {
-    axios.post("http://localhost:6969/api/auth",{
-      username: "admin",
-      password: "admin"
-    })
-    .then(response => {
-      this.setState({
-        username: response.data.username,
-        id: response.data.id
-      })
+  login = () => {
       this.toggleLoginModal()
-    })
-    .catch(err => console.log(err))
-    
   }
 
   toggleLoginModal = () => {
@@ -47,7 +35,6 @@ class ProfilePanel extends Component {
           <Login
             isOpen={this.state.loginModalOpen}
             toggle={()=>this.setState({loginModalOpen: !this.state.loginModalOpen})}
-            // Login={this.login}
           />
           {this.renderContent()}
       </div>

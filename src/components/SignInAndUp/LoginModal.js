@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import { Modal, ModalHeader, ModalBody, Form, Label, Input, FormGroup, Button } from 'reactstrap';
+import axios from '../../axios'
 
 class Login extends Component {
+    state = {
+        username: "",
+        password: ""
+    }
+
+    login = () => {
+        axios.post('http://localhost:6969/api/auth', {
+            username: this.state.username,
+            password: this.state.password
+        })
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
             <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
@@ -13,16 +28,6 @@ class Login extends Component {
                 </ModalBody>
             </Modal>
         );
-    }
-
-    state = {
-        username: "",
-        password: ""
-    }
-
-    login = () => {
-        console.log(this.state);
-        this.props.login(this.state.username,this.state.password)
     }
 
     renderBody() {
@@ -39,7 +44,7 @@ class Login extends Component {
                     <Input type="password" name="password" placeholder="Password" 
                         onChange={(event)=>this.setState({password:event.target.value})}/>
                 </FormGroup>
-                <Button className="btn btn-primary">Login</Button>
+                <Button className="btn btn-primary" onClick={this.login}>Login</Button>
             </Form>
         )
     }
