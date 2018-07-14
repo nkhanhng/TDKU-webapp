@@ -7,11 +7,13 @@ import ItemList from "./components/ItemList";
 import ItemDetail from "./components/ItemDetail";
 import PostForm from './components/PostForm';
 import AllStory from './components/UserPage/AllStory'
+import NavBar from "./components/NavBar";
 
 class App extends Component {
   render(){
     return (
-      <div className="App " >      
+      <div className="App " > 
+      <NavBar/>     
       <BrowserRouter>
         <div>
           <Route exact path="/"component={ItemList}  />
