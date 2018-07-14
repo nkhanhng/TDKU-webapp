@@ -13,7 +13,6 @@ class App extends Component {
   render(){
     return (
       <div className="App " > 
-      <NavBar/>     
       <BrowserRouter>
         <div>
           <Route exact path="/"component={ItemList}  />
