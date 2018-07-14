@@ -15,6 +15,15 @@ class Register extends Component {
         );
     }
 
+    state = {
+        username: "",
+        password: "",
+    }
+
+    register = () => {
+        console.log(this.state)
+    }
+
     renderBody(){
         return(
             <Form>

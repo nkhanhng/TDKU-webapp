@@ -2,20 +2,37 @@ import React, { Component } from 'react';
 import Register from './SignInAndUp/Register';
 import {Button} from 'reactstrap';
 import Login from './SignInAndUp/LoginModal';
+import axios from '../axios';
+
 
 class ProfilePanel extends Component {
   state={
     loginModalOpen : false ,
-    regModalOpen : false
+    regModalOpen : false,
+    username : null
   }
 
-  register = () => {
-    this.setState({
-      regModalOpen: true
-    })
-  }
+  // register = () => {
+  //   axios.post("api/users/create",{
+      
+  //   })
+  //   this.setState({
+  //     regModalOpen: true
+  //   })
+  // }
 
   login = () => {
+    axios.post("api/auth",{
+      username: "admin",
+      password: "123"
+    })
+    .then(response => {
+      this.setState({
+        username: response.data.username,
+        id: response.data.id
+      })
+    })
+    .catch(err => console.log(err))
     this.setState({
       loginModalOpen :true
     })
@@ -25,7 +42,7 @@ class ProfilePanel extends Component {
     return (
       <div className='mr-3'>
           <Button className="btn btn-light " onClick={this.register}>Sign Up</Button>{'  '}
-          <Button className="btn btn-light " onClick={this.login}>Sign In</Button>
+          
           
           <Register 
             isOpen={this.state.regModalOpen}
@@ -38,6 +55,13 @@ class ProfilePanel extends Component {
           />
       </div>
     );
+  }
+  renderContent(){
+    if(!this.state.username){
+      return <Button className="btn btn-light " onClick={this.login}>Sign In</Button>;
+    }else{
+      return <div>{this.state.username}</div>
+    }
   }
 }
 
