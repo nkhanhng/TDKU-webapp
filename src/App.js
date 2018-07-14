@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Switch, Route,BrowserRouter, withRouter} from 'react-router-dom';
+import { Route,BrowserRouter} from 'react-router-dom';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -15,7 +15,7 @@ class App extends Component {
         <div>
           <Route exact path="/"component={ItemList}  />
           <Route path="/post/:id" component={ItemDetail} />   
-           <Route exact path="/post"component={PostForm}  /> 
+           <Route  path="/postDetail"component={PostForm}  /> 
         </div>
          
       </BrowserRouter>

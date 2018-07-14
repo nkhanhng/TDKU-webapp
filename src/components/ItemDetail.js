@@ -3,8 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import axios from '../axios';
 import config from '../config';
-import Item1 from './Item1';
-import NavBar from './NavBar';
+
 class ItemDetail extends Component {
     componentWillMount(){
         const itemId = this.props.match.params.id;
@@ -36,7 +35,7 @@ class ItemDetail extends Component {
                 </button> */}
                 <div >
                     <div style={{width: "70%"}} className="child">
-                        <img className="img-fluid w-100" src={ `http://localhost:6969${this.state.item.imageUrl}`}
+                        <img className="img-fluid w-100" src={config.rootPath +  this.state.item.imageUrl}
                         alt={this.state.item.title} />
                         <h5 className='title'>{this.state.item.title}</h5>
                         <hr className='styleHR'/>
