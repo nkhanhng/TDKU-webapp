@@ -17,7 +17,7 @@ class AllStory extends Component {
 
     render() { 
         console.log(this.state.posts)
-        const allPost = this.state.posts.map(post => (<Story title={post.title} imageUrl={post.imageUrl} />))
+        const allPost = this.state.posts.map(post => (<Story title={post.title} imageUrl={post.imageUrl} userId={this.props.match.params.id}/>))
         return (
         <div>
             <div>{allPost}</div>
