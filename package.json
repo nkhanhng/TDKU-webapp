@@ -16,8 +16,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
     "reactstrap": "^6.2.0",
-    "three-js": "^79.0.0",
-    "cross-env": "^5.2.0"
+    "three-js": "^79.0.0"
   },
   "scripts": {
     "start": "cross-env REACT_APP_STATE=localhost react-scripts start",
