@@ -12,14 +12,11 @@ class ProfilePanel extends Component {
     username : null
   }
 
-  // register = () => {
-  //   axios.post("api/users/create",{
-      
-  //   })
-  //   this.setState({
-  //     regModalOpen: true
-  //   })
-  // }
+  register = () => {
+    this.setState({
+      regModalOpen: true
+    })
+  }
 
   login = () => {
     axios.post("api/auth",{
@@ -42,7 +39,6 @@ class ProfilePanel extends Component {
     return (
       <div className='mr-3'>
           <Button className="btn btn-light " onClick={this.register}>Sign Up</Button>{'  '}
-          
           
           <Register 
             isOpen={this.state.regModalOpen}

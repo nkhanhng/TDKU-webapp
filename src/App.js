@@ -6,6 +6,7 @@ import "./App.css";
 import ItemList from "./components/ItemList";
 import ItemDetail from "./components/ItemDetail";
 import PostForm from './components/PostForm';
+import AllStory from './components/UserPage/AllStory'
 
 class App extends Component {
   render(){
@@ -16,8 +17,8 @@ class App extends Component {
           <Route exact path="/"component={ItemList}  />
           <Route path="/post/:id" component={ItemDetail} />   
            <Route  path="/postDetail"component={PostForm}  /> 
+           <Route path="/user/:id" component={AllStory}/>
         </div>
-         
       </BrowserRouter>
       </div>
     )
