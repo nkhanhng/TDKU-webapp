@@ -12,29 +12,25 @@ class ProfilePanel extends Component {
     username : null
   }
 
-  // register = () => {
-  //   axios.post("api/users/create",{
-      
-  //   })
-  //   this.setState({
-  //     regModalOpen: true
-  //   })
-  // }
-
-  login = () => {
-    axios.post("api/auth",{
+  login = (submittedUsername,submittedPassword) => {
+    axios.post("http://localhost:6969/api/auth",{
       username: "admin",
-      password: "123"
+      password: "admin"
     })
     .then(response => {
       this.setState({
         username: response.data.username,
         id: response.data.id
       })
+      this.toggleLoginModal()
     })
     .catch(err => console.log(err))
+    
+  }
+
+  toggleLoginModal = () => {
     this.setState({
-      loginModalOpen :true
+      loginModalOpen : true
     })
   }
 
@@ -52,7 +48,9 @@ class ProfilePanel extends Component {
           <Login
             isOpen={this.state.loginModalOpen}
             toggle={()=>this.setState({loginModalOpen: !this.state.loginModalOpen})}
+            // Login={this.login}
           />
+          {this.renderContent()}
       </div>
     );
   }

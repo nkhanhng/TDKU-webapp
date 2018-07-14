@@ -6,7 +6,7 @@ class Login extends Component {
         return (
             <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
                 <ModalHeader>
-                    Register
+                    Sign In
             </ModalHeader>
                 <ModalBody>
                     {this.renderBody()}
@@ -22,7 +22,7 @@ class Login extends Component {
 
     login = () => {
         console.log(this.state);
-
+        this.props.login(this.state.username,this.state.password)
     }
 
     renderBody() {
@@ -30,15 +30,16 @@ class Login extends Component {
             <Form>
                 <FormGroup>
                     <Label>Username</Label>
-                        <Input type="text" placeholder="Username" 
+                        <Input type="text" placeholder="Username" placeholder="Username"
                         onChange={(event)=>this.setState({username:event.target.value})}
                     />
                 </FormGroup>
                 <FormGroup>
                     <Label>Password</Label>
-                    <Input type="password" name="password" placeholder="Password" />
+                    <Input type="password" name="password" placeholder="Password" 
+                        onChange={(event)=>this.setState({password:event.target.value})}/>
                 </FormGroup>
-                <Button className="btn btn-primary" >Login</Button>
+                <Button className="btn btn-primary">Login</Button>
             </Form>
         )
     }
