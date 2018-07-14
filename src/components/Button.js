@@ -15,8 +15,6 @@ class ButtonForPost extends Component {
     }
 
     render() {
-        console.log(this.props.userId)
-        console.log(this.state.userId)
         if(this.state.userId == this.props.userId){
             return (
                 <div>
