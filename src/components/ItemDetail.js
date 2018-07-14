@@ -25,8 +25,15 @@ class ItemDetail extends Component {
     // }
 
     render() {
-        if(!this.state.item) return <div>Loading...</div>
-        
+        if(!this.state.item) 
+        return  <div className='loader'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+           
+            
         return (
             <div className='container detailItem'>
                 {/* <NavBar/> */}
@@ -42,7 +49,7 @@ class ItemDetail extends Component {
                         <p className='description'>{this.state.item.description}</p>
                         <hr className='styleHR'/>
                         <h5 className='text-left'>Add a comment: </h5>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         <button className='btn btn-primary mt-3'>Send your comment</button>
                     </div>
                 </div>

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from "../axios";
 import NavBar from './NavBar';
 import MainContent from './MainContent';
-import DescriptionWeb from './DescriptionWeb'
+import DescriptionWeb from './DescriptionWeb';
+
 class ItemList extends Component {
     state = {
         images: [],
@@ -25,14 +26,15 @@ class ItemList extends Component {
   render() {
     const displayedImages = this.state.images.filter(
         img =>
-          img.title.includes(this.state.searchString) ||
-          img.description.includes(this.state.searchString)
+          img.title.includes(this.state.searchString) 
       );
     return (
         <div className="App">
+        
         <NavBar onSearchChanged={this._onSearchChanged} />
         <DescriptionWeb/>
         <MainContent images={displayedImages} />
+      
       </div>
     );
   }
