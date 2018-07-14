@@ -39,7 +39,6 @@ class ProfilePanel extends Component {
       <div className='mr-3'>
           <Button className="btn btn-light " onClick={this.register}>Sign Up</Button>{'  '}
           
-          
           <Register 
             isOpen={this.state.regModalOpen}
             toggle={()=>this.setState({regModalOpen: !this.state.regModalOpen})}
