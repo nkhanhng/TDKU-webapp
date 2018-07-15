@@ -11,10 +11,10 @@ class MainContent extends Component {
     return (
         <div className='container '> 
 
-            <div className= 'card-columns'>       
+            <div className= 'card-columns main_content'>       
                 
               {allImages}
-            
+              
             </div>
             
         </div> 

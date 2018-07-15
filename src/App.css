@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&subset=latin,latin-ext');
+@import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -50,8 +51,12 @@
 h2{
   font-family: 'Markazi Text', serif;
 }
-
+/* .main_content{
+  display: flex;   
+  flex-wrap: wrap;
+} */
 .box{
+  
   width: 355px;
   height: auto;
    transition: .3s ease; 
@@ -111,4 +116,102 @@ hr.styleHR {
 .title{
   margin-top: 20px;
   font-size: 30px;
+}
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 100px;
+  height: 100px;
+  /* background: #ff0 */
+}
+.loader span{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ff0;
+  animation: animate 1s linear  infinite;
+}
+.loader span:nth-child(1){
+  top: 0;
+  left: 0;
+  background: #f79f7f;
+}
+.loader span:nth-child(2){
+  top: 0;
+  right: 0;
+  background: #12cbc4;
+}
+.loader span:nth-child(3){
+  bottom: 0;
+  left: 0;
+  background: #ed4c67;
+}
+.loader span:nth-child(4){
+  bottom: 0;
+  right: 0;
+  background: #666666;
+}
+
+@keyframes animate{
+  0%{
+    transform: rotate(0deg)
+  }
+  10%{
+    transform: rotate(0deg)
+  }
+  50%{
+    transform: rotate(90deg)
+  }
+  90%{
+    transform: rotate(90deg)
+  }
+  100%{
+    transform: rotate(90deg)
+  }
+}
+.Side_nav{
+
+  width: 0px;
+  height: 100%;
+  position: fixed; 
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+.Side_nav a {
+  
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #BBBBBB;
+  display: block;
+  transition: 0.3s;
+}
+.Side_nav a:hover {
+  color: #fff;
+}
+.Side_nav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.Side_nav.open{
+  width: 150px;
+}
+
+.showBtn{
+  margin-left: 10px;
+  
+}
+.imgStory{
+  width: 400px;
+  height: 400px;
 }
