@@ -8,6 +8,7 @@ import ItemDetail from "./components/ItemDetail";
 import PostForm from './components/PostForm';
 import AllStory from './components/UserPage/AllStory'
 import NavBar from "./components/NavBar";
+import RegSuccess from "./components/RegSuccess"
 
 class App extends Component {
   render(){
@@ -17,8 +18,8 @@ class App extends Component {
         <div>
           <Route exact path="/"component={ItemList}  />
           <Route path="/post/:id" component={ItemDetail} />   
-           <Route  path="/postDetail"component={PostForm}  /> 
-           <Route path="/user/:id" component={AllStory}/>
+          <Route  path="/postDetail"component={PostForm}  /> 
+          <Route path="/user/:id" component={AllStory}/>
         </div>
       </BrowserRouter>
       </div>

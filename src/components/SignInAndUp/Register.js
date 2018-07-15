@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {Modal, ModalHeader, ModalBody, Form, Label, Input, FormGroup, Button} from 'reactstrap';
-// import axios from '../../axios'
+import axios from '../../axios'
+import RegSuccess from '../RegSuccess';
 
 class Register extends Component {
     state = {
         username: "",
         password: "",
-        email: ""
+        email: "",
+        success: false
     }
 
     handleUsername = (event) => {
@@ -21,18 +23,38 @@ class Register extends Component {
         this.setState({email: event.target.value})
     }
 
+    register = () => {
+        axios.post('http://localhost:6969/api/users', {
+            username: this.state.username,
+            password: this.state.password,
+            email: this.state.email
+        })
+        .then(data => {
+            console.log(data)
+            this.handleSuccess()
+        })
+        .catch(err => console.log(err))
+    }
+
+    handleSuccess = () => {
+        this.setState({success: true})
+    }
+
     render() {       
         return (
-            <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
-                <ModalHeader>
-                    Register
-                </ModalHeader>
-                <ModalBody>
-                    {this.renderBody()}
-                </ModalBody>
-            </Modal>
+                <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
+                    <ModalHeader>
+                        Register
+                    </ModalHeader>
+                    <ModalBody>
+                        {this.renderBody()}
+                    </ModalBody>
+                </Modal>
+            
         );
     }
+
+    
 
     renderBody(){
         return(
@@ -53,7 +75,11 @@ class Register extends Component {
                 <Label>Profile Image</Label>
                     <Input type="file" name="file" />
                 </FormGroup>
-                <Button className="btn btn-primary" >Sign Up</Button>
+                <Button className="btn btn-primary" onClick={this.register} >Sign Up</Button>
+                <RegSuccess 
+                    isOpen={this.state.success} 
+                    toggle={()=>this.setState({success: !this.state.success})}
+                />
             </Form>
         )
     }

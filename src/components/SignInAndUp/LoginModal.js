@@ -13,7 +13,7 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         })
-        .then(data => console.log(data))
+        .then(data => this.props.handleUsername(data.data.user.username))
         .catch(err => console.log(err))
     }
 

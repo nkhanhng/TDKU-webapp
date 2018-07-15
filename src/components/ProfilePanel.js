@@ -9,7 +9,7 @@ class ProfilePanel extends Component {
   state={
     loginModalOpen : false ,
     regModalOpen : false,
-    username : null
+    username : ""
   }
 
   login = () => {
@@ -20,6 +20,20 @@ class ProfilePanel extends Component {
     this.setState({
       loginModalOpen : true
     })
+  }
+
+  register = () => {
+    this.toggleRegModal()
+  }
+
+  toggleRegModal = () => {
+    this.setState({
+      regModalOpen: true
+    })
+  }
+
+  handleUsername = (username) => {
+    this.setState({username})
   }
 
   render() {
@@ -35,18 +49,20 @@ class ProfilePanel extends Component {
           <Login
             isOpen={this.state.loginModalOpen}
             toggle={()=>this.setState({loginModalOpen: !this.state.loginModalOpen})}
+            handleUsername={this.handleUsername}
           />
-          {this.renderContent()}
+          {this.renderLogin()}
       </div>
     );
   }
-  renderContent(){
+  renderLogin(){
     if(!this.state.username){
       return <Button className="btn btn-light " onClick={this.login}>Sign In</Button>;
     }else{
       return <div>{this.state.username}</div>
     }
   }
+
 }
 
 export default ProfilePanel;
