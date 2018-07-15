@@ -153,18 +153,22 @@ hr.styleHR {
   right: 0;
   background: #666666;
 }
+
 @keyframes animate{
   0%{
-    width: 100px;
-    height: 100px;
+    transform: rotate(0deg)
   }
   10%{
-    width: 100px;
-    height: 100px;
+    transform: rotate(0deg)
   }
   50%{
-    width: 150px;
-    height: 150px;
+    transform: rotate(90deg)
+  }
+  90%{
+    transform: rotate(90deg)
+  }
+  100%{
+    transform: rotate(90deg)
   }
 }
 .Side_nav{
@@ -206,4 +210,8 @@ hr.styleHR {
 .showBtn{
   margin-left: 10px;
   
+}
+.imgStory{
+  width: 400px;
+  height: 400px;
 }

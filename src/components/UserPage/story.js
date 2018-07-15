@@ -6,9 +6,9 @@ class Story extends Component {
     return (
       <div className='container'>
 
-        <div className='row '>
+        <div className='row story'>
           
-          <img style={{height: '200px', width:"200px"}} src={'http://localhost:6969' + this.props.imageUrl} className="col-3"/>
+          <img className='imgStory col-4' src={'http://localhost:6969' + this.props.imageUrl} />
           <h1 className="col-5 border-right">{this.props.title}</h1>
           <ButtonForPost userId={this.props.userId}/>
 
@@ -17,6 +17,7 @@ class Story extends Component {
       </div>
     );
   }
+
 }
 
 export default Story;
