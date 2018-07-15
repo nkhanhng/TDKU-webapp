@@ -169,6 +169,7 @@ hr.styleHR {
 }
 .Side_nav{
 
+  width: 0px;
   height: 100%;
   position: fixed; 
   z-index: 1; 
@@ -180,6 +181,7 @@ hr.styleHR {
   transition: 0.5s; 
 }
 .Side_nav a {
+  
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -197,6 +199,10 @@ hr.styleHR {
   font-size: 36px;
   margin-left: 50px;
 }
+.Side_nav.open{
+  width: 150px;
+}
+
 .showBtn{
   margin-left: 10px;
   

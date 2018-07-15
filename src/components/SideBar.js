@@ -3,7 +3,7 @@ import SideBarContent from './SideBarContent';
 class SideBar extends Component {
     constructor(props) {
         super(props)
-        this.state = { show: true };
+        this.state = { show: false };
         this.toggleDiv = this.toggleDiv.bind(this)
     }
     toggleDiv = () => {
@@ -14,7 +14,7 @@ class SideBar extends Component {
         return (
             <div>
                 <button className='btn btn-outline-light showBtn' onClick={this.toggleDiv}>☰</button>
-                {this.state.show && <SideBarContent toggle2={this.toggleDiv} />}
+                <SideBarContent toggle2={this.toggleDiv} isShow={this.state.show} />
             </div>
         );
     }
