@@ -15,7 +15,7 @@ class ButtonForPost extends Component {
     }
 
     sendRequest = (id) => {
-        axios.post(`http://localhost:6969/api/trade/${id}`)
+        axios.post(`http://localhost:6969/api/trade`)
         .then(response => {
             console.log(response)
         })
