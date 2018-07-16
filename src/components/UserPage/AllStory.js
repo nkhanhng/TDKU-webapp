@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../axios'
 import config from '../../config';
 import Story from './Story';
-
+import NavBar from '../NavBar';
 class AllStory extends Component {
 
     state = {
@@ -33,8 +33,10 @@ class AllStory extends Component {
         })
         return (
            
-        <div>
+        <div className='allStory'>
+            <NavBar/>
             
+            <h1 className='storyTitle'>Các post của bạn:</h1>
             <div>{allPost}</div>
         </div>
         );

@@ -26,7 +26,7 @@ class ButtonForPost extends Component {
         else{
             return (
                 <div>
-                    <button className="btn btn-primary">Trade</button>
+                    <button className="btn btn-primary m-1">Trade</button>
                 </div>
             );
         }

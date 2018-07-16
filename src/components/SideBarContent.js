@@ -6,7 +6,7 @@ class SideBarContent extends Component {
             <div className={`Side_nav${this.props.isShow ? " open" : ""}`}>
                 <a href="javascript:void(0)" className="closebtn" onClick={this.props.toggle2}
                 >&times;</a>
-                <a href='#'> Avatar</a>
+                <a href='/user/:id'> Avatar</a>
                 <a href="/">Home</a>
                 <a href="#">Services</a>
                 <a href="#">Clients</a>

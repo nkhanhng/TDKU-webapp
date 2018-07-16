@@ -3,7 +3,7 @@ import axios from "../axios";
 import NavBar from './NavBar';
 import MainContent from './MainContent';
 import DescriptionWeb from './DescriptionWeb';
-
+import ImageHome from './ImageHome'
 class ItemList extends Component {
     state = {
         images: [],
@@ -32,6 +32,7 @@ class ItemList extends Component {
         <div className="App">
         
         <NavBar onSearchChanged={this._onSearchChanged} />
+        <ImageHome/>
         <DescriptionWeb/>
         <MainContent images={displayedImages} />
       
