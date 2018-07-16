@@ -14,6 +14,20 @@ class ButtonForPost extends Component {
             .catch(err => console.log(err))
     }
 
+    sendRequest = (id) => {
+        axios.post(`http://localhost:6969/api/trade/${id}`)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(err => console.log(err))
+    }
+
+    acceptRequest = (id) => {
+        axios.post(`http://localhost:6969/api/${id}/accept`)
+        .then(response=>console.log(response))
+        .catch(err => console.log(err))
+    }
+
     render() {
         if(this.state.userId == this.props.userId){
             return (
@@ -26,7 +40,7 @@ class ButtonForPost extends Component {
         else{
             return (
                 <div>
-                    <button className="btn btn-primary">Trade</button>
+                    <button className="btn btn-primary" onClick={()=>this.sendRequest(this.state.userId)}>Trade</button>
                 </div>
             );
         }
