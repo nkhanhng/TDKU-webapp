@@ -33,8 +33,10 @@ class AllStory extends Component {
         })
         return (
            
-        <div>
+        <div className='allStory'>
+            <NavBar/>
             
+            <h1 className='storyTitle'>Các post của bạn:</h1>
             <div>{allPost}</div>
         </div>
         );
