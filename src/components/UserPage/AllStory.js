@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../axios'
 import config from '../../config';
 import Story from './story';
+import NavBar from '../NavBar'
 
 class AllStory extends Component {
 
