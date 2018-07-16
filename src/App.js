@@ -21,7 +21,7 @@ class App extends Component {
           <Route path="/post/:id" component={ItemDetail} />   
           <Route  path="/postDetail"component={PostForm}  /> 
           <Route path="/user/:id" component={AllStory}/>
-          <Route path="/trade" component={Trade}/>
+          <Route path="/trade/:id" component={Trade}/>
         </div>
       </BrowserRouter>
       </div>

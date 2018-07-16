@@ -14,7 +14,7 @@ class Story extends Component {
           
           </div>
           
-          <ButtonForPost className='btnStory' userId={this.props.userId}/>
+          <ButtonForPost className='btnStory' guestId={this.props.guestId} postId={this.props.postId} ownerId={this.props.ownerId}/>
 
         </div>
         

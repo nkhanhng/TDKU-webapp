@@ -5,26 +5,28 @@ import axios from '../axios';
 class Trade extends Component {
 
     state = {
-
+        allRequest:[],
+        guestId:[],
+        postId:[]
     }
     
-    componentDidMount(){
-        const id = "5b4a23dd8813ac09e861798d"
+    componentWillMount(){
+        const id = this.props.match.params.id
         axios.get(`http://localhost:6969/api/trade/all/${id}`)
         .then(response => {
             console.log(response)
+            this.setState({allRequest: response.data})
         })
         .catch(err => console.log(err))
+        
     }
 
-    acceptRequest = (id) => {
-        axios.post()
-    }
+    
 
     render() {
         return (
             <div>
-                <p>Hello</p>
+                <p></p>
             </div>
         );
     }

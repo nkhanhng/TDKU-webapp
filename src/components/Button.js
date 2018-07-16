@@ -4,7 +4,8 @@ import axios from '../axios'
 
 class ButtonForPost extends Component {
     state = {
-        userId: ''
+        userId: '',
+        statusText:""
     }
 
     componentDidMount(){
@@ -14,10 +15,16 @@ class ButtonForPost extends Component {
             .catch(err => console.log(err))
     }
 
-    sendRequest = (id) => {
-        axios.post(`http://localhost:6969/api/trade`)
+    sendRequest = () => {
+        axios.post(`http://localhost:6969/api/trade`,{
+            ownerId: this.props.ownerId,
+            postId: this.props.postId,
+            guestId: this.props.guestId
+        })
         .then(response => {
             console.log(response)
+            this.setState({statusText: response.statusText})
+            console.log(this.state.statusText)
         })
         .catch(err => console.log(err))
     }
@@ -40,7 +47,10 @@ class ButtonForPost extends Component {
         else{
             return (
                 <div>
-                    <button className="btn btn-primary" onClick={()=>this.sendRequest(this.state.userId)}>Trade</button>
+                    <button className="btn btn-primary" onClick={()=>this.sendRequest()}>Trade</button>
+                    {this.state.statusText === "OK"
+                    ? <p color="red">Request sent</p>
+                    : ""}
                 </div>
             );
         }
