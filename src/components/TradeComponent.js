@@ -7,7 +7,7 @@ class Trade extends Component {
     state = {
         allRequest:[],
         guestId:[],
-        postId:[]
+        status:""
     }
     
     componentWillMount(){
@@ -22,13 +22,31 @@ class Trade extends Component {
         
     }
 
-    
+    acceptRequest = (id) => {
+        axios.post(`http://localhost:6969/api/trade/${id}/accept`,{
+            guestId: id
+        })
+        .then(data => {
+            this.setState({status: data.data.success})
+        })
+        .catch(err => console.log(err))
+    }
 
     render() {
         let guestId =[]
         this.state.allRequest.map(request => {
             console.log(request)
-            guestId.push(<h4>User {request.guestId} want to trade with you </h4>)
+            guestId.push(
+                <div>
+                    <span><h4>User {request.guestId} want to trade with you </h4></span>
+                    <span><button onClick={()=>this.acceptRequest(request.guestId)}>Accept</button></span>
+                    <span><button>Deny</button></span>
+                    {this.setState.status === 1
+                    ? <p>Accepted</p>
+                    : <p></p>}
+                </div>
+                
+            )
         })
         return (
             <div>
