@@ -16,6 +16,7 @@ class Trade extends Component {
         .then(response => {
             console.log(response)
             this.setState({allRequest: response.data})
+            console.log(this.state.allRequest)
         })
         .catch(err => console.log(err))
         
@@ -24,9 +25,15 @@ class Trade extends Component {
     
 
     render() {
+        let guestId =[]
+        this.state.allRequest.map(request => {
+            console.log(request)
+            guestId.push(<h4>User {request.guestId} want to trade with you </h4>)
+        })
         return (
             <div>
-                <p></p>
+                <h2> Your requests </h2>
+                <div>{guestId}</div>
             </div>
         );
     }
