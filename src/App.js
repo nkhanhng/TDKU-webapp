@@ -9,6 +9,7 @@ import PostForm from './components/PostForm';
 import AllStory from './components/UserPage/AllStory'
 import NavBar from "./components/NavBar";
 import RegSuccess from "./components/RegSuccess"
+import Trade from "./components/TradeComponent";
 
 class App extends Component {
   render(){
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/post/:id" component={ItemDetail} />   
           <Route  path="/postDetail"component={PostForm}  /> 
           <Route path="/user/:id" component={AllStory}/>
+          <Route path="/trade/:id" component={Trade}/>
         </div>
       </BrowserRouter>
       </div>

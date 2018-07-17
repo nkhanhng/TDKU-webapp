@@ -9,8 +9,12 @@ class Story extends Component {
         <div className='row story'>
           
           <img className='imgStory col-4' src={'http://localhost:6969' + this.props.imageUrl} />
-          <h1 className="col-5 border-right">{this.props.title}</h1>
-          <ButtonForPost userId={this.props.userId}/>
+          
+          <div><h1 className="border-right titleStory">{this.props.title}</h1>
+          
+          </div>
+          
+          <ButtonForPost className='btnStory' guestId={this.props.guestId} postId={this.props.postId} ownerId={this.props.ownerId}/>
 
         </div>
         
