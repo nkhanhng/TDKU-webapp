@@ -34,7 +34,6 @@ class AllStory extends Component {
         return (
            
         <div>
-            
             <div>{allPost}</div>
         </div>
         );
